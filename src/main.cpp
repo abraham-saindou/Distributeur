@@ -3,6 +3,8 @@
 #include <map>
 #include <utility>
 #include <vector>
+#include "Database.h"
+
 
 void Menu(){;
     int choice;
@@ -53,11 +55,11 @@ public :
     
     void Add_Drinks()
     {
-        std::fstream fs{"DRINK LIST.txt", std::ios::out};
+/*        std::fstream fs{"DRINK LIST.txt", std::ios::out};
         std::cout<<"Enter the name, quantity, price and the number of the new drink";
         std::cin>>DrinkName>>quant>>prix>>num;
         std::pair<std::pair<std::string, int>,std::pair<double,int>> Drink = {std::make_pair("pepsi", 15), std::make_pair(1.5, 5 )};
-        
+        */
     };
    
    
@@ -80,6 +82,8 @@ public :
 
 int main()
 {
-    
-    Drinks Pepsi{"Pepsi", 1.5, 2, 6};
+    std::cout<<"I am here";
+    Database test{"localhost", "abraham", "abraham", "distributeur"};
+    test.load("produit");
+    /*Drinks Pepsi{"Pepsi", 1.5, 2, 6};*/
 };

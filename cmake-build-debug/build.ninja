@@ -52,12 +52,14 @@ build cmake_object_order_depends_target_Distributeur: phony || CMakeFiles/Distri
 build CMakeFiles/Distributeur.dir/src/main.cpp.o: CXX_COMPILER__Distributeur_Debug /home/kubun/CLionProjects/Distributeur/src/main.cpp || cmake_object_order_depends_target_Distributeur
   DEP_FILE = CMakeFiles/Distributeur.dir/src/main.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I/usr/include/cppconn/include -I/usr/include/cppconn/include/cppconn
   OBJECT_DIR = CMakeFiles/Distributeur.dir
   OBJECT_FILE_DIR = CMakeFiles/Distributeur.dir/src
 
 build CMakeFiles/Distributeur.dir/src/Database.cpp.o: CXX_COMPILER__Distributeur_Debug /home/kubun/CLionProjects/Distributeur/src/Database.cpp || cmake_object_order_depends_target_Distributeur
   DEP_FILE = CMakeFiles/Distributeur.dir/src/Database.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I/usr/include/cppconn/include -I/usr/include/cppconn/include/cppconn
   OBJECT_DIR = CMakeFiles/Distributeur.dir
   OBJECT_FILE_DIR = CMakeFiles/Distributeur.dir/src
 
@@ -71,6 +73,8 @@ build CMakeFiles/Distributeur.dir/src/Database.cpp.o: CXX_COMPILER__Distributeur
 
 build Distributeur: CXX_EXECUTABLE_LINKER__Distributeur_Debug CMakeFiles/Distributeur.dir/src/main.cpp.o CMakeFiles/Distributeur.dir/src/Database.cpp.o
   FLAGS = -g
+  LINK_LIBRARIES = -Wl,-rpath,/usr/include/cppconn/lib  -lmysqlcppconn
+  LINK_PATH = -L/usr/include/cppconn/lib
   OBJECT_DIR = CMakeFiles/Distributeur.dir
   POST_BUILD = :
   PRE_LINK = :

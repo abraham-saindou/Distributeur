@@ -221,6 +221,27 @@ Distributeur_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Distributeur_SOURCE_DIR:STATIC=/home/kubun/CLionProjects/Distributeur
 
+//The directory containing a CMake configuration file for cppconn.
+cppconn_DIR:PATH=cppconn_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for libmysqlcppconn-dev.
+libmysqlcppconn-dev_DIR:PATH=libmysqlcppconn-dev_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for libmysqlcppconn.
+libmysqlcppconn_DIR:PATH=libmysqlcppconn_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for mysqlREQUIRED.
+mysqlREQUIRED_DIR:PATH=mysqlREQUIRED_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for mysql_driver.hREQUIRED.
+mysql_driver.hREQUIRED_DIR:PATH=mysql_driver.hREQUIRED_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for mysql_driver.h.
+mysql_driver.h_DIR:PATH=mysql_driver.h_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for mysqlcppconn.
+mysqlcppconn_DIR:PATH=mysqlcppconn_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

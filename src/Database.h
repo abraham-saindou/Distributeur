@@ -7,27 +7,48 @@
 #ifndef DISTRIBUTEUR_DATABASE_H
 #define DISTRIBUTEUR_DATABASE_H
 
+#include <variant>
+#include <list>
+#include <any>
 #include <mysql_driver.h>
-#include <mysql_connection.h>
+#include <cppconn/connection.h>
 #include <cppconn/resultset.h>
 #include <cppconn/prepared_statement.h>
 
 
-
 class Database {
-private:
+protected:
     std::string Host, User, Password, BDD;
 
 public:
-    Database(std::string host, std::string user, std::string password, std::string database;);
+    Database(std::string host, std::string user, std::string password, std::string database);
+    ~Database();
+
+    /*union MyUnion{
+        int id;
+        std::string nom;
+        int quantite;
+        int prix;
+        std::string description;
+        std::string categorie;
+    };
+    std::list<std::list<MyUnion>> list;
+    MyUnion element1;
+    MyUnion element2;
+    MyUnion element3;
+    MyUnion element4;
+    MyUnion element5;
+    MyUnion element6; */
+
 
     sql::mysql::MySQL_Driver *driver = sql::mysql::get_mysql_driver_instance();
     sql::Connection *con = driver->connect(Host, User, Password);
     sql::Statement *statement = con->createStatement();
-    sql::ResultSet *resultSet= statement->executeQuery("SELECT * FROM produit");
+    /*sql::ResultSet *resultSet3= statement->executeQuery("SELECT * FROM produit");*/
 
-    auto load(std::string table_name);
+    void load(std::string table_name);
     void close_connecetor();
+    void count_tablelen();
     void add_product();
     void insert_last_item();
     void del_product();
