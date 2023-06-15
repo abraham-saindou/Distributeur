@@ -10,17 +10,14 @@
 #include <variant>
 #include <list>
 #include <any>
-#include <mysql_driver.h>
-#include <cppconn/connection.h>
-#include <cppconn/resultset.h>
-#include <cppconn/prepared_statement.h>
+#include <string>
 
 
 class Database {
-protected:
-    std::string Host, User, Password, BDD;
+
 
 public:
+    static std::string Host, User, Passwordd, BDD;
     Database(std::string host, std::string user, std::string password, std::string database);
     ~Database();
 
@@ -41,9 +38,6 @@ public:
     MyUnion element6; */
 
 
-    sql::mysql::MySQL_Driver *driver = sql::mysql::get_mysql_driver_instance();
-    sql::Connection *con = driver->connect(Host, User, Password);
-    sql::Statement *statement = con->createStatement();
     /*sql::ResultSet *resultSet3= statement->executeQuery("SELECT * FROM produit");*/
 
     void load(std::string table_name);

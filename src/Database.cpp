@@ -5,13 +5,22 @@
 #include "Database.h"
 #include <vector>
 #include <utility>
+#include <cppconn/driver.h>
+#include <cppconn/connection.h>
+#include <cppconn/resultset.h>
+#include <cppconn/prepared_statement.h>
+
 
 Database::Database(std::string host, std::string user, std::string password, std::string database)
-{ Host = std::move(host), User = std::move(user), Password = std::move(password), BDD = std::move(database);};
+{ Host = std::move(host), User = std::move(user), Passwordd = std::move(password), BDD = std::move(database);};
 
-
+Database::
 
 Database::~Database()= default;
+
+sql::Driver *driver = get_driver_instance();
+sql::Connection *con = driver->connect(Database::Host, Database::User, Database::Passwordd);
+sql::Statement *statement = con->createStatement();
 
 void Database::load(std::string table_name) {
     sql::ResultSet *resultSet = statement->executeQuery("SELECT produit.id, produit.nom, produit.quantite,"
