@@ -82,7 +82,6 @@ public :
 
 int main()
 {
-    std::cout<<"I am here";
     Database test{"localhost", "abraham", "abraham", "distributeur"};
     test.load("produit");
     /*Drinks Pepsi{"Pepsi", 1.5, 2, 6};*/

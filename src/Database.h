@@ -11,13 +11,21 @@
 #include <list>
 #include <any>
 #include <string>
+#include <cppconn/driver.h>
+#include <cppconn/connection.h>
+#include <cppconn/resultset.h>
+#include <cppconn/prepared_statement.h>
 
 
 class Database {
 
+private:
+    std::string& Host, User, Passwordd, BDD;
 
 public:
-    static std::string Host, User, Passwordd, BDD;
+    sql::Driver *driver;
+    sql::Connection *con;
+
     Database(std::string host, std::string user, std::string password, std::string database);
     ~Database();
 
@@ -40,6 +48,7 @@ public:
 
     /*sql::ResultSet *resultSet3= statement->executeQuery("SELECT * FROM produit");*/
 
+    auto connection(std::string h, std::string u, std::string p, std::string d);
     void load(std::string table_name);
     void close_connecetor();
     void count_tablelen();

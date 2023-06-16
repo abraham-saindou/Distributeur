@@ -5,28 +5,29 @@
 #include "Database.h"
 #include <vector>
 #include <utility>
-#include <cppconn/driver.h>
-#include <cppconn/connection.h>
-#include <cppconn/resultset.h>
-#include <cppconn/prepared_statement.h>
-
 
 Database::Database(std::string host, std::string user, std::string password, std::string database)
-{ Host = std::move(host), User = std::move(user), Passwordd = std::move(password), BDD = std::move(database);};
-
-Database::
+    : Host (host), User(user), Passwordd(password), BDD(database) {};
 
 Database::~Database()= default;
 
-sql::Driver *driver = get_driver_instance();
-sql::Connection *con = driver->connect(Database::Host, Database::User, Database::Passwordd);
-sql::Statement *statement = con->createStatement();
+auto Database::connection(std::string h, std::string u, std::string p, std::string d) {
+    driver = get_driver_instance();
+    con = driver->connect(h,u,p);
+    con->setSchema(d);
+    if (con->isValid()){
+        std::cout<<"You are log to "<< d << " database as "<<u<<"\n";
+    }
+    else {
+        std::cout<<"You are not connected, check your username and password\n";
+    }
+    return con;
+}
 
 void Database::load(std::string table_name) {
-    sql::ResultSet *resultSet = statement->executeQuery("SELECT produit.id, produit.nom, produit.quantite,"
-                                                       "produit.prix, produit.description, produit.categorie");
-    std::cout<<"I am here";
-
+    Database::connection("localhost","abraham", "abraham","distributeur");
+    sql::Statement *statement = con->createStatement();
+    sql::ResultSet *resultSet = statement->executeQuery("SELECT id, nom, quantite, prix, description, categorie FROM produit");
 
     std::vector<std::vector<std::variant<int, std::string, int, int, std::string, std::string>>> datalist;
     while (resultSet->next()){
@@ -52,7 +53,7 @@ void Database::load(std::string table_name) {
 }
 
 void Database::count_tablelen() {
-    sql::ResultSet *resultSet1 = statement->executeQuery("SELECT COUNT(*) FROM produit");
+    /*sql::ResultSet *resultSet1 = statement->executeQuery("SELECT COUNT(*) FROM produit");*/
 }
 
 void Database::close_connecetor() {
