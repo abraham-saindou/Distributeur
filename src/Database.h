@@ -52,7 +52,7 @@ public:
     void load(std::string table_name);
     void close_connecetor();
     void count_tablelen();
-    void add_product();
+    void add_product(std::string nom, int quantite, int prix, std::string description, int categorie);
     void insert_last_item();
     void del_product();
     void mod_product();
