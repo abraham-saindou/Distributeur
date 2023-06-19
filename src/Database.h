@@ -49,7 +49,7 @@ public:
     /*sql::ResultSet *resultSet3= statement->executeQuery("SELECT * FROM produit");*/
 
     auto connection(std::string h, std::string u, std::string p, std::string d);
-    void load(std::string table_name);
+    auto load(std::string table_name);
     void close_connecetor();
     void count_tablelen();
     void add_product(std::string nom, int quantite, int prix, std::string description, int categorie);
