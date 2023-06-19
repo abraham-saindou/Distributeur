@@ -25,36 +25,20 @@ private:
 public:
     sql::Driver *driver;
     sql::Connection *con;
+    sql::Statement *statement;
+    sql::PreparedStatement *prep;
+    sql::ResultSet *resultSet;
 
     Database(std::string host, std::string user, std::string password, std::string database);
     ~Database();
 
-    /*union MyUnion{
-        int id;
-        std::string nom;
-        int quantite;
-        int prix;
-        std::string description;
-        std::string categorie;
-    };
-    std::list<std::list<MyUnion>> list;
-    MyUnion element1;
-    MyUnion element2;
-    MyUnion element3;
-    MyUnion element4;
-    MyUnion element5;
-    MyUnion element6; */
-
-
-    /*sql::ResultSet *resultSet3= statement->executeQuery("SELECT * FROM produit");*/
-
     auto connection(std::string h, std::string u, std::string p, std::string d);
-    void load(std::string table_name);
+    auto load(std::string table_name);
     void close_connecetor();
     void count_tablelen();
     void add_product(std::string nom, int quantite, int prix, std::string description, int categorie);
     void insert_last_item();
-    void del_product();
+    void del_product(int num);
     void mod_product();
 
 };
