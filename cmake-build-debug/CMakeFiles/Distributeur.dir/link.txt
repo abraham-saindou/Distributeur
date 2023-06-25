@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Distributeur.dir/src/main.cpp.o CMakeFiles/Distributeur.dir/src/Database.cpp.o -o Distributeur   -L/usr/include/cppconn/lib  -Wl,-rpath,/usr/include/cppconn/lib -lmysqlcppconn 
