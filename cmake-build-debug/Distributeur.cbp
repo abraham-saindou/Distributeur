@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/kubun/CLionProjects/Distributeur/cmake-build-debug"/>
+				<Option working_dir="/home/joker/CLionProjects/Distributeur/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Distributeur">
-				<Option output="/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Distributeur" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kubun/CLionProjects/Distributeur/cmake-build-debug"/>
+				<Option output="/home/joker/CLionProjects/Distributeur/cmake-build-debug/Distributeur" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/joker/CLionProjects/Distributeur/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -35,15 +35,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 Distributeur"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 Distributeur"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Distributeur/fast">
-				<Option output="/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Distributeur" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/kubun/CLionProjects/Distributeur/cmake-build-debug"/>
+				<Option output="/home/joker/CLionProjects/Distributeur/cmake-build-debug/Distributeur" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/joker/CLionProjects/Distributeur/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -59,43 +59,43 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 Distributeur/fast"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 Distributeur/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/kubun/CLionProjects/Distributeur/cmake-build-debug"/>
+				<Option working_dir="/home/joker/CLionProjects/Distributeur/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/kubun/CLionProjects/Distributeur/cmake-build-debug"/>
+				<Option working_dir="/home/joker/CLionProjects/Distributeur/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j12 -f &quot;/home/kubun/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/joker/CLionProjects/Distributeur/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/kubun/CLionProjects/Distributeur/src/Database.cpp">
+		<Unit filename="/home/joker/CLionProjects/Distributeur/src/Database.cpp">
 			<Option target="Distributeur"/>
 		</Unit>
-		<Unit filename="/home/kubun/CLionProjects/Distributeur/src/Database.h">
+		<Unit filename="/home/joker/CLionProjects/Distributeur/src/Database.h">
 			<Option target="Distributeur"/>
 		</Unit>
-		<Unit filename="/home/kubun/CLionProjects/Distributeur/src/main.cpp">
+		<Unit filename="/home/joker/CLionProjects/Distributeur/src/main.cpp">
 			<Option target="Distributeur"/>
 		</Unit>
-		<Unit filename="/home/kubun/CLionProjects/Distributeur/CMakeLists.txt">
+		<Unit filename="/home/joker/CLionProjects/Distributeur/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
