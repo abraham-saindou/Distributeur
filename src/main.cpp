@@ -78,11 +78,11 @@ public :
     void With_Coins();
 };
 
-
-
 int main()
 {
     Database test{"localhost", "abraham", "abraham", "distributeur"};
     test.load("produit");
+    /*test.del_product(3);*/
+    /*test.add_product("Sambo", 13, 1,"Jus de bananes", 1);*/
     /*Drinks Pepsi{"Pepsi", 1.5, 2, 6};*/
 };

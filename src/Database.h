@@ -11,6 +11,7 @@
 #include <list>
 #include <any>
 #include <string>
+#include <vector>
 #include <cppconn/driver.h>
 #include <cppconn/connection.h>
 #include <cppconn/resultset.h>
@@ -33,13 +34,12 @@ public:
     ~Database();
 
     auto connection(std::string h, std::string u, std::string p, std::string d);
-    auto load(std::string table_name);
+    std::vector<std::tuple<int, std::string, int, int, std::string, int>> load(std::string table_name);
     void close_connecetor();
-    void count_tablelen();
     void add_product(std::string nom, int quantite, int prix, std::string description, int categorie);
     void insert_last_item();
     void del_product(int num);
-    void mod_product();
+    void mod_product(std::string nom, int quantite, int prix, std::string description, int categorie, int id);
 
 };
 

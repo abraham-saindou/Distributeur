@@ -10,14 +10,14 @@
 Database::Database(std::string host, std::string user, std::string password, std::string database)
     : Host (host), User(user), Passwordd(password), BDD(database) {};
 
-Database::~Database()= default;
+Database::~Database() = default;
 
 auto Database::connection(std::string Host, std::string User, std::string Passwordd, std::string BDD) {
     driver = get_driver_instance();
     con = driver->connect(Host,User,Passwordd);
     con->setSchema(BDD);
     if (con->isValid()){
-        std::cout<<"You are log to "<< BDD << " database as "<<User<<"\n";
+        std::cout<<"You are log to "<< BDD << " database as "<<User<<".\n\n";
     }
     else {
         std::cout<<"You are not connected, check your username and password\n";
@@ -25,7 +25,7 @@ auto Database::connection(std::string Host, std::string User, std::string Passwo
     return con;
 }
 
-auto Database::load(std::string table_name) {
+std::vector<std::tuple<int, std::string, int, int, std::string, int>> Database::load(std::string table_name){
     Database::connection("localhost","abraham", "abraham","distributeur");
     statement = con->createStatement();
     resultSet = statement->executeQuery("SELECT id, nom, quantite, prix, description, categorie FROM produit");
@@ -41,43 +41,59 @@ auto Database::load(std::string table_name) {
 
         std::tuple<int, std::string, int, int, std::string, int> tuple = std::make_tuple(id, nom, quantite, prix, description, categorie);
         datalist.push_back(tuple);
-
     }
+    std::cout<<"id"<<" | "<<"nom"<<" | "<<"quantite"<<" | "<<"prix"<<" | "<<"description"<<" | "<<"categorie\n";
     for (auto & i : datalist) {
-        std::cout<<get<0>(i)<< " "<<get<1>(i)<< " "<<get<2>(i)<<" "<<get<3>(i)<<" "<<get<4>(i)<<" "<<get<5>(i)<<"\n";
-
+        std::cout<<get<0>(i)<< " | "<<get<1>(i)<< " | "<<get<2>(i)<<" | "<<get<3>(i)<<" | "<<get<4>(i)<<" | "<<get<5>(i)<<"\n";
     }
-    std::cout<<datalist.size();
     delete resultSet;
     return datalist;
 }
 
 void Database::add_product(std::string nom, int quantite, int prix, std::string description, int categorie) {
-    auto obj = load("produit");
-    std::string item = "INSERT into produit (nom, description, prix, quantite, id_categorie) VALUES(%s,%s,%s,%s,%s)";
+    std::string item = "INSERT into produit (nom, quantite, prix, description, categorie) VALUES (?, ?, ?, ?, ?)";
     std::string cat = "INSERT into categorie (nom) VALUES (%s)";
     std::tuple<std::string, int, int, std::string, int> data = std::make_tuple(nom, quantite, prix, description, categorie);
 
-    /*for(int i = 0; i < obj.size(); ++i){
-        if (nom != get<0>(obj[i]))
-    }*/
+    prep = con->prepareStatement(item);
+    prep->setString(1, nom);
+    prep->setInt(2, quantite);
+    prep->setInt(3, prix);
+    prep->setString(4, description);
+    prep->setInt(5, categorie);
+    prep->executeUpdate();
+
+    delete prep;
+}
+
+void Database::mod_product(std::string nom, int quantite, int prix, std::string description, int categorie, int id) {
+    std::string mod_item = "UPDATE produit SET nom = ?, quantite = ? prix = ?, description = ?, categorie = ? WHERE id = ?";
+
+    prep = con->prepareStatement(mod_item);
+    prep->setString(1, nom);
+    prep->setInt(2, quantite);
+    prep->setInt(3, prix);
+    prep->setString(4, description);
+    prep->setInt(5, categorie);
+    prep->setInt(6, id);
+
+    prep->executeUpdate();
+
 
 }
 
 void Database::del_product(int num) {
-    std::string del_item = "DELETE FROM produit WHERE id = %s";
+    std::string del_item = "DELETE FROM produit WHERE id = ?";
 
     prep = con->prepareStatement(del_item);
     prep->setInt(1,num);
     prep->executeUpdate();
+    load("produit");
 
     delete prep;
-
 }
 
 void Database::close_connecetor() {
     con->close();
     delete con;
 }
-
-
