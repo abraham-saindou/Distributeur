@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/joker/CLionProjects/Distributeur/src/Database.cpp" "CMakeFiles/Distributeur.dir/src/Database.cpp.o" "gcc" "CMakeFiles/Distributeur.dir/src/Database.cpp.o.d"
-  "/home/joker/CLionProjects/Distributeur/src/main.cpp" "CMakeFiles/Distributeur.dir/src/main.cpp.o" "gcc" "CMakeFiles/Distributeur.dir/src/main.cpp.o.d"
+  "/home/kubun/CLionProjects/Distributeur/src/Database.cpp" "CMakeFiles/Distributeur.dir/src/Database.cpp.o" "gcc" "CMakeFiles/Distributeur.dir/src/Database.cpp.o.d"
+  "/home/kubun/CLionProjects/Distributeur/src/main.cpp" "CMakeFiles/Distributeur.dir/src/main.cpp.o" "gcc" "CMakeFiles/Distributeur.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

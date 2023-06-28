@@ -43,24 +43,6 @@ void Menu(){;
 };
 class Drinks
 {
-private : std::string DrinkName; 
-          unsigned short int quantity ;
-          unsigned short int number;
-          float price;
-
-public :
-    std::fstream fs{"DRINK LIST.txt", std::ios::out};
-    Drinks(std::string Name, float prix, int quant, int num) 
-    { DrinkName = Name, price = prix, quantity = quant, number = num;} ;
-    
-    void Add_Drinks()
-    {
-/*        std::fstream fs{"DRINK LIST.txt", std::ios::out};
-        std::cout<<"Enter the name, quantity, price and the number of the new drink";
-        std::cin>>DrinkName>>quant>>prix>>num;
-        std::pair<std::pair<std::string, int>,std::pair<double,int>> Drink = {std::make_pair("pepsi", 15), std::make_pair(1.5, 5 )};
-        */
-    };
    
    
     void Remove_Drinks();
@@ -82,6 +64,9 @@ int main()
 {
     Database test{"localhost", "abraham", "abraham", "distributeur"};
     test.load("produit");
+    test.mod_product("Ice Tea", 12, 1, "Thé glacé", 1, 2);
+    test.load("produit");
+    test.close_connector();
     /*test.del_product(3);*/
     /*test.add_product("Sambo", 13, 1,"Jus de bananes", 1);*/
     /*Drinks Pepsi{"Pepsi", 1.5, 2, 6};*/

@@ -67,7 +67,7 @@ void Database::add_product(std::string nom, int quantite, int prix, std::string 
 }
 
 void Database::mod_product(std::string nom, int quantite, int prix, std::string description, int categorie, int id) {
-    std::string mod_item = "UPDATE produit SET nom = ?, quantite = ? prix = ?, description = ?, categorie = ? WHERE id = ?";
+    std::string mod_item = "UPDATE produit SET nom = ?, quantite = ?, prix = ?, description = ?, categorie = ? WHERE id = ?";
 
     prep = con->prepareStatement(mod_item);
     prep->setString(1, nom);
@@ -78,7 +78,6 @@ void Database::mod_product(std::string nom, int quantite, int prix, std::string 
     prep->setInt(6, id);
 
     prep->executeUpdate();
-
 
 }
 
@@ -93,7 +92,24 @@ void Database::del_product(int num) {
     delete prep;
 }
 
-void Database::close_connecetor() {
+std::tuple<int, std::string, int, int, std::string, int> Database::insert_last_item() {
+    statement = con->createStatement();
+    resultSet = statement->executeQuery("SELECT * FROM produit ORDER BY ID DESC LIMIT 1");
+    std::tuple<int, std::string, int, int, std::string, int> tuple;
+    while (resultSet->next()){
+        int id = resultSet->getInt("id");
+        std::string nom = resultSet->getString("nom");
+        int quantite = resultSet->getInt("quantite");
+        int prix = resultSet->getInt("prix");
+        std::string description = resultSet->getString("description");
+        int categorie = resultSet->getInt("categorie");
+
+        tuple = std::make_tuple(id, nom, quantite, prix, description, categorie);
+    }
+    return tuple;
+}
+
+void Database::close_connector() {
     con->close();
     delete con;
 }

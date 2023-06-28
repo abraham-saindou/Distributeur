@@ -33,13 +33,20 @@ public:
     Database(std::string host, std::string user, std::string password, std::string database);
     ~Database();
 
+    /* Functions to manage items in machine */
     auto connection(std::string h, std::string u, std::string p, std::string d);
     std::vector<std::tuple<int, std::string, int, int, std::string, int>> load(std::string table_name);
-    void close_connecetor();
+    std::tuple<int, std::string, int, int, std::string, int>  insert_last_item();
+
     void add_product(std::string nom, int quantite, int prix, std::string description, int categorie);
-    void insert_last_item();
+
     void del_product(int num);
     void mod_product(std::string nom, int quantite, int prix, std::string description, int categorie, int id);
+    void close_connector();
+
+    /* Functions to manage money and prices in machine */
+    void calculus();
+    void retrive_amount();
 
 };
 
