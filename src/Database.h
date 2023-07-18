@@ -3,7 +3,6 @@
 //
 
 
-
 #ifndef DISTRIBUTEUR_DATABASE_H
 #define DISTRIBUTEUR_DATABASE_H
 
@@ -44,7 +43,10 @@ public:
     void mod_product(std::string nom, int quantite, int prix, std::string description, int categorie, int id);
     void close_connector();
 
-    /* Functions to manage money and prices in machine */
+    /* Functions to manage money and item selection in machine */
+    std::vector<std::tuple<int, std::string, std::string>> show_item();
+    void select_item();
+    void insert_money();
     void calculus();
     void retrive_amount();
 

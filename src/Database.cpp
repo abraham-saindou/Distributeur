@@ -4,7 +4,6 @@
 
 #include "Database.h"
 #include <vector>
-#include <utility>
 #include <iostream>
 
 Database::Database(std::string host, std::string user, std::string password, std::string database)
@@ -107,6 +106,42 @@ std::tuple<int, std::string, int, int, std::string, int> Database::insert_last_i
         tuple = std::make_tuple(id, nom, quantite, prix, description, categorie);
     }
     return tuple;
+}
+
+std::vector<std::tuple<int, std::string, std::string>> Database::show_item() {
+    statement = con->createStatement();
+    resultSet = statement->executeQuery("SELECT produit.id, produit.nom, produit.description FROM produit");
+    std::vector<std::tuple<int, std::string, std::string>> itemlist;
+
+    while (resultSet->next()){
+        int id = resultSet->getInt("id");
+        std::string nom = resultSet->getString("nom");
+        std::string description = resultSet->getString("description");
+
+        std::tuple<int, std::string, std::string> tuple = std::make_tuple(id, nom, description);
+        itemlist.push_back(tuple);
+    }
+
+    for (auto & obj : itemlist) {
+        std::cout<<get<0>(obj)<< " | "<<get<1>(obj)<< " | "<<get<2>(obj)<<"\n";
+    }
+    return itemlist;
+}
+
+void Database::select_item() {
+    auto itemlist = Database::show_item();
+    int choice;
+    std::cin>>choice;
+
+    for(auto & tuple : itemlist){
+        if (choice == std::get<0>(tuple)){
+            std::cout<<"You've chosen "<<std::get<0>(tuple)<<" drink";
+        }
+    }
+}
+
+void Database::insert_money() {
+    std::cout<<"Insert";
 }
 
 void Database::close_connector() {
